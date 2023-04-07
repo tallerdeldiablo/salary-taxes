@@ -1,34 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Salary Calculator</title>
+<head>z
+	<title>Easy Estimator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Add Font Awesome stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-VhkjYMHweW8CvT+GtIzHtIKj+BygAVJGeMhjsfvSp+YABDwYqW3eq2lJFOj9d55rLrIztW8pRJ1z4h7V/Z4Yw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<h1>Salary Calculator</h1>
+	<h1>Easy Estimator</h1>
 
-	<form>
-		<label for="hoursPerWeek">Hours Per Week:</label>
-		<input type="number" id="hoursPerWeek" name="hoursPerWeek" min="0" max="168" step="1" value="40" required>
+	<div class="form-container">
+		<form>
+	<label for="hoursPerWeek">Hours Per Week:</label>
+	<input type="number" id="hoursPerWeek" name="hoursPerWeek" min="0" max="168" step="1" value="40" required>
 
-		<label for="hourlyRate">Hourly Rate:</label>
-		<div class="input-group">
-			<input type="number" id="hourlyRate" name="hourlyRate" min="0" step="0.01" value="25" required>
-			<button type="button" onclick="calculateSalary()">Calculate</button>
-		</div>
+	<label for="hourlyRate">Hourly Rate:</label>
+	<div class="input-group">
+		<input type="number" id="hourlyRate" name="hourlyRate" min="0" step="0.01" value="25" required>
+		<button type="button" class="btncalc" onclick="calculateSalary()">
+			<i class="fas fa-comet"></i> Calculate ☄️
+		</button>
+	</div>
+</form>
 
-		<label for="monthlySalary">Monthly Salary:</label>
-		<input type="number" id="monthlySalary" name="monthlySalary" readonly>
+<form>
+	<label for="monthlySalary">Monthly Salary:</label>
+	<input type="number" id="monthlySalary" name="monthlySalary" readonly>
 
-		<label for="yearlySalary">Yearly Salary:</label>
-		<input type="number" id="yearlySalary" name="yearlySalary" readonly>
+	<label for="yearlySalary">Yearly Salary:</label>
+	<input type="number" id="yearlySalary" name="yearlySalary" readonly>
 
-		<label for="discountPercent">Tax Percent:</label>
-		<input type="number" id="discountPercent" name="discountPercent" min="0" max="100" step="1" value="30">
+	<label for="discountPercent">Tax Percent:</label>
+	<input type="number" id="discountPercent" name="discountPercent" min="0" max="100" step="1" value="30">
 
-		<label for="discountedYearlySalary">Discounted Yearly Salary:</label>
-		<input type="number" id="discountedYearlySalary" name="discountedYearlySalary" readonly>
-	</form>
+	<label for="discountedYearlySalary">Discounted Yearly Salary:</label>
+	<input type="number" id="discountedYearlySalary" name="discountedYearlySalary" readonly>
+</form>
+
+	</div>
+
 </body>
+</html>
+
 </html>
