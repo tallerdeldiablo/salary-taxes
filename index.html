@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Salary Calculator</title>
+</head>
+<body>
+	<h1>Salary Calculator</h1>
+
+	<form>
+		<label for="hoursPerWeek">Hours Per Week:</label>
+		<input type="number" id="hoursPerWeek" name="hoursPerWeek" min="0" max="168" step="1" required>
+
+		<label for="hourlyRate">Hourly Rate:</label>
+		<input type="number" id="hourlyRate" name="hourlyRate" min="0" step="0.01" required>
+
+		<label for="monthlySalary">Monthly Salary:</label>
+		<input type="number" id="monthlySalary" name="monthlySalary" readonly>
+
+		<label for="yearlySalary">Yearly Salary:</label>
+		<input type="number" id="yearlySalary" name="yearlySalary" readonly>
+
+		<label for="discountPercent">Discount Percent:</label>
+		<input type="number" id="discountPercent" name="discountPercent" min="0" max="100" step="1">
+
+		<label for="discountedYearlySalary">Discounted Yearly Salary:</label>
+		<input type="number" id="discountedYearlySalary" name="discountedYearlySalary" readonly>
+		
+		<button type="button" onclick="calculateSalary()">Calculate</button>
+	</form>
+
+	<script>
+		function calculateSalary() {
+			// Get input values
+			const hoursPerWeek = parseFloat(document.getElementById("hoursPerWeek").value);
+			const hourlyRate = parseFloat(document.getElementById("hourlyRate").value);
+			const discountPercent = parseFloat(document.getElementById("discountPercent").value);
+
+			// Calculate salaries
+			const monthlySalary = (hoursPerWeek * hourlyRate * 4).toFixed(2);
+			const yearlySalary = (hoursPerWeek * hourlyRate * 52).toFixed(2);
+			const discountedYearlySalary = ((1 - (discountPercent / 100)) * yearlySalary).toFixed(2);
+
+			// Set output values
+			document.getElementById("monthlySalary").value = monthlySalary;
+			document.getElementById("yearlySalary").value = yearlySalary;
+			document.getElementById("discountedYearlySalary").value = discountedYearlySalary;
+		}
+	</script>
+</body>
+</html>
