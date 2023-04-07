@@ -9,6 +9,13 @@ h1 {
 	margin-bottom: 30px;
 }
 
+.form-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 40%;
+  margin: 0 auto;
+}
+
 form {
 	max-width: 500px;
 	margin: 0 auto;
@@ -38,3 +45,23 @@ button {
 	color: #fff;
 	font-weight: bold;
 	transition: background-color 0.2s
+  button.world-button {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 10px;
+	border: none;
+	border-radius: 50%;
+	background-color: #4CAF50;
+	color: white;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+	cursor: pointer;
+}
+
+button.world-button:hover {
+	background-color: #3e8e41;
+}
+
+button.world-button i {
+	font-size: 20px;
+}
